@@ -7,7 +7,6 @@ const loader = document.getElementById('loader');
  */
 async function getPosts() {
   let url = 'https://www.junglescout.com/wp-json/wp/v2/posts?_embed';
-  //let url = 'posts.json';
   let options = {
     method: 'GET',
     mode: 'cors',
