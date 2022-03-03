@@ -1,0 +1,274 @@
+/*-------------------*/
+/*----- Default -----*/
+/*-------------------*/
+*,
+*:before,
+*:after {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-kerning: auto;
+}
+html {
+  -webkit-text-size-adjust: 100%;
+  background-color:#ffffff;
+}
+body {
+  margin: 0;
+  padding: 85px 0 0 0;
+  position: relative;
+  font-size: 1.4em;
+  line-height: 1.4;
+  font-weight: 400;
+  font-family: "Montserrat", sans-serif;
+  -webkit-text-size-adjust: 100%;
+  background-color:#ffffff;
+  color: #000000;
+}
+::selection {
+  background: #f57706;
+  color: #000000;
+}
+::-moz-selection {
+  background: #f57706;
+  color: #000000;
+}
+/*------------------*/
+/*----- Header -----*/
+/*------------------*/
+.container {
+  display: block;
+  width: 1400px;
+  max-width: 100%;
+  margin: auto;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+/*------------------*/
+/*----- Header -----*/
+/*------------------*/
+#header {
+  display: block;
+  width: 100%;
+  height: 85px;
+  margin: 0;
+  padding: 15px;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100%;
+  background-color: #fff;
+  text-align: center;
+  z-index: 10;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+#header .js-brand {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+}
+#header .tagline {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 14px;
+  line-height: 16px;
+  font-weight: 700;
+}
+/*------------------------*/
+/*----- Loading Icon -----*/
+/*------------------------*/
+#loader {
+  display: block;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: calc(50% - 25px);
+  left: calc(50% - 25px);
+  border: 6px solid #f57706;
+  border-radius: 100%;
+  -webkit-animation: pulse 0.8s infinite linear;
+  animation: pulse 0.8s infinite linear;
+  z-index: 5;
+}
+@-webkit-keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #f57706;
+  }
+  99% {
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 0 0 #f57706;
+  }
+  99% {
+    box-shadow: 0 0 0 20px transparent;
+  }
+}
+/*-----------------*/
+/*----- Posts -----*/
+/*-----------------*/
+#blog {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+  max-width: 100%;
+  min-height: calc(100vh - 171px);
+  overflow: hidden;
+  margin: 0;
+  padding: 0 30px;
+}
+#blog > .post {
+  display: block;
+  width: calc(100%/3);
+  padding: 30px;
+}
+#blog > .post .featured-img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  padding-bottom: 60%;
+  overflow: hidden;
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  border-radius: 5px;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#blog > .post .featured-img:before {
+  content: "";
+  display: block;
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 100%;
+  left: 0;
+  background: rgb(0, 0, 0, 0.5);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#blog > .post .featured-img:hover:before {
+  opacity: 1;
+  bottom: 0;
+}
+#blog > .post .featured-img:after {
+  content: "link";
+  display: block;
+  opacity: 0;
+  width: 50px;
+  height: 50px;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 25px);
+  font-family: "Material Icons";
+  font-size: 40px;
+  line-height: 50px;
+  text-align: center;
+  border-radius: 50%;
+  color: #ffffff;
+  background: rgb(245, 119, 6, 0.75);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+#blog > .post .featured-img:hover:after {
+  opacity: 1;
+  top: calc(50% - 25px);
+}
+#blog > .post .featured-img img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 0;
+  padding: 0;
+  position: absolute;
+}
+#blog > .post:hover .featured-img {
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.33);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.33);
+}
+#blog > .post .date {
+  display: block;
+  margin: 20px 0 10px 0;
+  padding: 0;
+  font-size: 16px;
+  line-height: 18px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #999;
+}
+#blog > .post .title {
+  display: block;
+  margin: 0;
+  padding: 0;
+  font-size: 22px;
+  line-height: 30px;
+  font-weight: 700;
+  color: #000000;
+}
+#blog > .post .title a {
+  color: #000000;
+  text-decoration: none;
+  -webkit-transition: color 0.3s ease-in-out;
+  transition: color 0.3s ease-in-out;
+}
+#blog > .post .title a:hover,
+#blog > .post .title a:hover {
+  color: #f57706;
+}
+@media screen and (max-width: 991px) {
+  #blog {
+    padding: 0 15px;
+  }
+  #blog > .post {
+    width: 50%;
+    padding: 15px;
+  }
+}
+@media screen and (max-width: 767px) {
+  #blog > .post {
+    width: 100%;
+    padding-bottom: 30px;
+  }
+}
+@media screen and (max-width: 575px) {
+  #blog > .post .date {
+    font-size: 14px;
+    line-height: 16px;
+  }
+  #blog > .post .title {
+    font-size: 20px;
+    line-height: 28px;
+  }
+}
+/*------------------*/
+/*----- Footer -----*/
+/*------------------*/
+#footer {
+  display: block;
+  width: 100%;
+  margin: 0;
+  padding: 15px;
+  font-size: 12px;
+  line-height: 16px;
+  text-align: center;
+  -webkit-box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
